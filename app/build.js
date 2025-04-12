@@ -1,5 +1,5 @@
 // Simple build script to avoid TypeScript compilation errors
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
 try {
   // Skip TypeScript compilation since we've set noEmit: true
