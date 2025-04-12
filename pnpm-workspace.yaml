@@ -1,5 +1,7 @@
 packages:
-  # all packages in direct subdirs of packages/
+  # Main application
+  - 'app'
+  # Documentation
+  - 'docs'
+  # Future packages
   - 'packages/*'
-  # all packages in subdirs of subdirs of examples/
-  - 'examples/*/*'

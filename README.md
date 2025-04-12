@@ -1,110 +1,105 @@
-<div align="center">
-  <img src="https://bafkreihge6rx6ykdcdmspwvh4oweojqsvzoyhjgqp6yfqkgo2b45l27auq.ipfs.w3s.link/" alt="OpenDrive Logo" width="150px" />
-  <h1>OpenDrive</h1>
-  <p><em>Secure, Decentralized Storage by The Open Crypto Foundation</em></p>
+# 🌐 OpenDrive
 
-  <p>
-    <a href="https://github.com/opencryptofoundation/opendrive/blob/main/LICENSE.md">
-      <img src="https://img.shields.io/badge/License-MIT%20%26%20Apache--2.0-blue.svg" alt="License: MIT & Apache-2.0">
-    </a>
-    <a href="https://github.com/opencryptofoundation/opendrive/actions">
-      <img src="https://github.com/opencryptofoundation/opendrive/workflows/CI/badge.svg" alt="CI Status">
-    </a>
-    <a href="https://t.me/opencryptofoundation">
-      <img src="https://img.shields.io/badge/chat-telegram-blue?logo=telegram" alt="Chat on Telegram">
-    </a>
-  </p>
+<p align="center">
+  <img src="https://bafkreihge6rx6ykdcdmspwvh4oweojqsvzoyhjgqp6yfqkgo2b45l27auq.ipfs.w3s.link/" alt="OpenDrive Logo" width="180" height="180" />
+</p>
+
+<div align="center">
+  
+  [![License: MIT & Apache-2.0](https://img.shields.io/badge/License-MIT%20%26%20Apache--2.0-blue.svg)](LICENSE.md)
+  [![GitHub Stars](https://img.shields.io/github/stars/o-c-foundation/Open-Drive.svg?style=social&label=Star)](https://github.com/o-c-foundation/Open-Drive)
+  [![Twitter Follow](https://img.shields.io/twitter/follow/OCFoundation.svg?style=social&label=Follow)](https://twitter.com/OCFoundation)
+  
+  **Secure, Decentralized Storage for the Modern Web**
+  
+  [Website](https://opendrive.opencrypto.org) | [Documentation](https://docs.opendrive.opencrypto.org) | [Demo](https://app.opendrive.opencrypto.org)
+  
 </div>
 
-## Overview
+## 📋 Overview
 
-OpenDrive is a next-generation decentralized storage platform built on content-addressing principles to provide secure, resilient, and censorship-resistant file storage. Developed by The Open Crypto Foundation, OpenDrive leverages distributed networks to ensure your data remains accessible and tamper-evident.
+OpenDrive is a cutting-edge decentralized storage platform developed by The Open Crypto Foundation. Designed for user privacy, security, and data ownership, OpenDrive leverages the power of content-addressable storage through IPFS to provide a resilient alternative to traditional centralized storage solutions.
 
-### Why OpenDrive?
+### ✨ Key Features
 
-- **Content-Addressed Storage**: Files are identified by their cryptographic hash, not by location, ensuring content integrity and authenticity
-- **Decentralized Architecture**: No single point of failure or control
-- **Cryptographic Verification**: Every file is cryptographically verified using advanced algorithms
-- **Intuitive Interface**: Modern, responsive design with seamless user experience
-- **Flexible Storage Plans**: From free personal use to enterprise-scale solutions
+- **Content-Addressed Storage**: Files are identified by what they are, not where they're stored
+- **End-to-End Encryption**: Optional client-side encryption for your most sensitive files
+- **Intuitive User Interface**: Beautiful, responsive design that works on any device
+- **Granular Access Control**: Share precisely what you want, with whom you want
+- **Built for Permanence**: Store your data with confidence for the long term
+- **Progressive Web App**: Install on any device for a native-like experience
+- **Open Source**: Full transparency with community-driven development
 
-## Features
+## 🚀 Getting Started
 
-- 📤 **Simple File Upload**: Drag-and-drop or browser-based file selection
-- 🔐 **Secure Authentication**: Email-based verification with private key security
-- 📂 **Directory Support**: Upload entire folders while preserving structure
-- 🔄 **Versioning**: Track changes to files over time
-- 🔍 **Easy Retrieval**: Access your files from anywhere with content-based addressing
-- 📊 **Storage Management**: Monitor usage and manage your storage allocation
-- 📱 **Mobile Responsive**: Access from any device with our responsive interface
+### Try OpenDrive Online
 
-## Technical Foundation
+Visit [app.opendrive.opencrypto.org](https://app.opendrive.opencrypto.org) to use OpenDrive without installation.
 
-OpenDrive is built on IPFS (InterPlanetary File System) technology, which provides content-addressed storage through distributed hash tables and directed acyclic graphs. This gives your data several advantages:
-
-- Content is retrieved based on what it is, not where it is
-- Files are automatically deduplicated across the network
-- Built-in versioning through content-addressing
-- Resilience against network partitions and censorship
-
-For developers, OpenDrive offers:
-- TypeScript-based architecture with strict typing
-- React components for seamless integration
-- Comprehensive documentation and examples
-- RESTful API endpoints for programmatic access
-
-## Getting Started
-
-To begin using OpenDrive, simply:
-
-1. Visit [app.opendrive.opencrypto.org](https://app.opendrive.opencrypto.org)
-2. Create an account or sign in
-3. Start uploading your files
-4. Share content using content-addressed links
-
-For developers wanting to contribute to the project:
+### Run Locally
 
 ```bash
 # Clone the repository
-git clone https://github.com/opencryptofoundation/opendrive.git
-cd opendrive
+git clone https://github.com/o-c-foundation/Open-Drive.git
+cd Open-Drive
 
 # Install dependencies
 pnpm install
 
 # Start the development server
-cd app
 pnpm dev
 ```
 
-## Documentation
+Visit `http://localhost:5173` to see the app running locally.
 
-- [User Guide](https://docs.opendrive.opencrypto.org/user-guide)
-- [Developer Documentation](https://docs.opendrive.opencrypto.org/developers)
-- [API Reference](https://docs.opendrive.opencrypto.org/api)
-- [Technical Whitepaper](https://docs.opendrive.opencrypto.org/whitepaper)
-
-## Storage Plans
+## 📊 Storage Plans
 
 | Plan | Storage | Monthly Price | Features |
 |------|---------|---------------|----------|
-| Basic | 5GB | Free | Content addressing, Basic file sharing |
-| Standard | 100GB | $12.99 | Enhanced redundancy, Priority uploads |
-| Professional | 1TB | $49.99 | Advanced analytics, Multiple accounts |
-| Enterprise | 5TB+ | Custom | Dedicated support, Custom API access |
+| **Basic** | 5GB | Free | Content addressing, Basic sharing |
+| **Standard** | 100GB | $12.99 | Priority uploads, Enhanced redundancy |
+| **Professional** | 1TB | $49.99 | Advanced analytics, Multiple accounts |
+| **Enterprise** | 5TB+ | Custom | Dedicated support, SLA guarantees |
 
-## About The Open Crypto Foundation
+## 🔐 Security and Privacy
 
-The Open Crypto Foundation is dedicated to advancing decentralized technologies that enhance privacy, security, and data ownership. Through open-source development and education, we're creating a more resilient and user-controlled digital ecosystem.
+OpenDrive prioritizes your privacy and security:
 
-## Contributing
+- Data is distributed across the network, eliminating single points of failure
+- Content addressing ensures data integrity through cryptographic verification
+- Optional client-side encryption keeps your sensitive data private
+- No tracking or data mining of your content
+- Open-source codebase ensures transparency and security
 
-We welcome contributions from the community! Please see our [Contributing Guide](CONTRIBUTING.md) for more information on how to get involved.
+## 🛠️ Technology Stack
 
-## Security
+- **Frontend**: React, TypeScript, Tailwind CSS, Vite
+- **Storage**: IPFS for content-addressable storage
+- **Authentication**: Email-based auth with private key security
+- **State Management**: Zustand for lightweight state handling
+- **Testing**: Vitest for unit and component testing
 
-The security of our users' data is paramount. If you discover a security issue, please report it confidentially to [security@opencryptofoundation.org](mailto:security@opencryptofoundation.org).
+## 🤝 Contributing
 
-## License
+We welcome contributions from developers of all skill levels! See our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
 
-OpenDrive is dual-licensed under MIT and Apache 2.0 licenses. See [LICENSE.md](LICENSE.md) for more details.
+## 📜 License
+
+OpenDrive is dual-licensed under the MIT and Apache 2.0 licenses. See [LICENSE.md](LICENSE.md) for details.
+
+## 🔮 Roadmap
+
+- **Q1 2025**: Mobile applications for iOS and Android
+- **Q2 2025**: Enhanced collaborative features
+- **Q3 2025**: Developer API and integrations
+- **Q4 2025**: Enterprise solution with advanced security features
+
+## 🌟 The Open Crypto Foundation
+
+OpenDrive is a project of [The Open Crypto Foundation](https://opencrypto.org), a non-profit organization dedicated to advancing decentralized technologies that enhance privacy, security, and data ownership.
+
+---
+
+<p align="center">
+  Made with ❤️ by The Open Crypto Foundation
+</p>

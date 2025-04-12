@@ -1,34 +1,43 @@
 {
   "name": "opendrive",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "OpenDrive by The Open Crypto Foundation - Secure, decentralized storage powered by IPFS.",
   "author": "The Open Crypto Foundation",
   "maintainers": [
     "opencryptofoundation"
   ],
   "license": "Apache-2.0 OR MIT",
-  "packageManager": "pnpm@9.8.0+sha256.56a9e76b51796ca7f73b85e44cf83712862091f4d498c0ce4d5b7ecdc6ba18f7",
+  "packageManager": "pnpm@9.8.0",
   "scripts": {
-    "prepare": "pnpm run build && pnpm run compile",
-    "build": "pnpm run --recursive --if-present build",
-    "dev": "pnpm run --filter './packages/*' --if-present --parallel dev",
-    "clean": "rm -rf node_modules coverage packages/*/{dist,build,node_modules}",
-    "compile": "pnpm run --recursive --if-present compile",
-    "format": "pnpm --recursive --if-present run lint --fix",
-    "format:check": "lint",
-    "lint": "pnpm --recursive --if-present run lint",
-    "test": "pnpm run --filter './packages/**' --recursive test",
-    "typecheck": "tsc -b",
-    "test:examples": "pnpm run --filter './examples/**' test",
-    "build:examples": "pnpm run --filter './examples/**' --no-bail build || true",
-    "serve:examples": "serve examples",
-    "playwright:install": "pnpm --filter './examples/test/playwright' exec playwright install"
+    "prepare": "pnpm run build",
+    "build": "cd app && pnpm run build",
+    "dev": "cd app && pnpm run dev",
+    "clean": "rm -rf node_modules app/node_modules app/dist",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "cd app && pnpm run lint",
+    "test": "cd app && pnpm run test"
   },
-  "dependencies": {
-    "hd-scripts": "^4.1.0"
+  "workspaces": [
+    "app"
+  ],
+  "keywords": [
+    "decentralized",
+    "storage",
+    "ipfs",
+    "open-crypto-foundation",
+    "opendrive"
+  ],
+  "engines": {
+    "node": ">=16.0.0",
+    "pnpm": ">=7.0.0"
   },
-  "devDependencies": {
-    "serve": "^14.1.2"
-  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/o-c-foundation/Open-Drive.git"
+  },
+  "bugs": {
+    "url": "https://github.com/o-c-foundation/Open-Drive/issues"
+  },
+  "homepage": "https://github.com/o-c-foundation/Open-Drive#readme"
 }
