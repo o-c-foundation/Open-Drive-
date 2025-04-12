@@ -1,0 +1,7 @@
+.git
+node_modules
+.eslintrc.json
+.prettierrc
+README.md
+pnpm-lock.yaml
+tsconfig.json 

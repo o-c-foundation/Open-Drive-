@@ -1,13 +1,11 @@
 {
-  "name": "w3ui",
+  "name": "opendrive",
   "private": true,
-  "version": "0.0.0",
-  "description": "Headless, type-safe, UI components for the next generation Web3.Storage APIs.",
-  "author": "Alan Shaw",
+  "version": "0.1.0",
+  "description": "OpenDrive by The Open Crypto Foundation - Secure, decentralized storage powered by IPFS.",
+  "author": "The Open Crypto Foundation",
   "maintainers": [
-    "travis",
-    "yusefnapora",
-    "olizilla"
+    "opencryptofoundation"
   ],
   "license": "Apache-2.0 OR MIT",
   "packageManager": "pnpm@9.8.0+sha256.56a9e76b51796ca7f73b85e44cf83712862091f4d498c0ce4d5b7ecdc6ba18f7",
