@@ -36,9 +36,66 @@
     <link rel="apple-touch-icon" href="https://bafkreihge6rx6ykdcdmspwvh4oweojqsvzoyhjgqp6yfqkgo2b45l27auq.ipfs.w3s.link/" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <style>
+      #fallback-content {
+        display: none;
+        font-family: 'Inter', sans-serif;
+        padding: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .fallback-heading {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: #3B82F6;
+      }
+      .fallback-error {
+        color: #EF4444;
+        padding: 1rem;
+        border: 1px solid #EF4444;
+        border-radius: 0.25rem;
+        margin: 1rem 0;
+        font-family: monospace;
+        text-align: left;
+        white-space: pre-wrap;
+        overflow-x: auto;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <div id="fallback-content">
+      <h1 class="fallback-heading">OpenDrive - Loading Failed</h1>
+      <p>The application failed to load. See details below:</p>
+      <div id="error-container" class="fallback-error">Looking for errors...</div>
+    </div>
+    <script>
+      // Error handling to detect why the app isn't rendering
+      window.addEventListener('error', function(e) {
+        console.error('Caught error:', e);
+        document.getElementById('fallback-content').style.display = 'block';
+        document.getElementById('error-container').textContent = 
+          'Error: ' + e.message + '\n' +
+          'File: ' + e.filename + '\n' +
+          'Line: ' + e.lineno + ', Column: ' + e.colno + '\n\n' +
+          'Stack Trace:\n' + (e.error && e.error.stack ? e.error.stack : 'Not available');
+      });
+      
+      // If React doesn't start within 3 seconds, show fallback
+      setTimeout(function() {
+        if (document.getElementById('root').children.length === 0) {
+          document.getElementById('fallback-content').style.display = 'block';
+          document.getElementById('error-container').textContent = 
+            'No rendering errors detected, but the application did not load within 3 seconds.\n\n' +
+            'This could indicate:\n' +
+            '- JavaScript files failed to load\n' +
+            '- Environment variables are missing\n' +
+            '- API endpoints are unreachable\n' +
+            '- A silent error is preventing React from mounting';
+        }
+      }, 3000);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
     <!-- Preload key assets -->
     <link rel="preload" as="image" href="https://bafkreihge6rx6ykdcdmspwvh4oweojqsvzoyhjgqp6yfqkgo2b45l27auq.ipfs.w3s.link/" />
