@@ -9,7 +9,6 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true,
-    minify: 'terser',
     cssCodeSplit: false
   },
   optimizeDeps: {
