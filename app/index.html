@@ -44,6 +44,14 @@
         max-width: 800px;
         margin: 0 auto;
         text-align: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(255, 255, 255, 0.95);
+        border-top: 3px solid #3B82F6;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        z-index: 9999;
       }
       .fallback-heading {
         font-size: 1.5rem;
@@ -60,6 +68,21 @@
         text-align: left;
         white-space: pre-wrap;
         overflow-x: auto;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+      .fallback-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #6B7280;
+      }
+      .fallback-close:hover {
+        color: #EF4444;
       }
     </style>
   </head>
@@ -69,11 +92,24 @@
       <h1 class="fallback-heading">OpenDrive - Loading Failed</h1>
       <p>The application failed to load. See details below:</p>
       <div id="error-container" class="fallback-error">Looking for errors...</div>
+      <button class="fallback-close" onclick="document.getElementById('fallback-content').style.display = 'none';">Close</button>
     </div>
     <script>
       // Error handling to detect why the app isn't rendering
       window.addEventListener('error', function(e) {
         console.error('Caught error:', e);
+        
+        // Ignore errors from browser extensions
+        if (e.filename && (
+            e.filename.includes('chrome-extension://') ||
+            e.filename.includes('moz-extension://') ||
+            e.filename.includes('extension://') ||
+            e.filename.includes('safari-extension://'))
+        ) {
+          console.log('Ignoring browser extension error:', e.message);
+          return;
+        }
+        
         document.getElementById('fallback-content').style.display = 'block';
         document.getElementById('error-container').textContent = 
           'Error: ' + e.message + '\n' +
@@ -93,6 +129,9 @@
             '- Environment variables are missing\n' +
             '- API endpoints are unreachable\n' +
             '- A silent error is preventing React from mounting';
+        } else {
+          // If the app has loaded, make sure the fallback is hidden
+          document.getElementById('fallback-content').style.display = 'none';
         }
       }, 3000);
     </script>
