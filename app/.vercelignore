@@ -1,5 +1,8 @@
-.git
 node_modules
+.git
+docs
+examples
+packages
 .eslintrc.json
 .prettierrc
 README.md
