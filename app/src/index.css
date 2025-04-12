@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #6B7280;
+  --color-secondary: #4B5563;
+  --color-dark: #1F2937;
+  --color-light: #F3F4F6;
+  --color-gray-800: #1F2937;
+  --color-gray-700: #374151;
+  --color-gray-600: #4B5563;
+  --color-gray-500: #6B7280;
+  --color-gray-400: #9CA3AF;
+  --color-gray-300: #D1D5DB;
+  --color-gray-200: #E5E7EB;
+  --color-gray-100: #F3F4F6;
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Courier Prime', monospace;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: none;
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
+  image-rendering: pixelated;
+}
+
+.bg-grad {
+  background: linear-gradient(to bottom right, var(--color-gray-700), var(--color-gray-500));
+}
+
+.card {
+  @apply bg-white rounded-md shadow-md p-4 md:p-6 mb-4 border border-gray-300;
+  background-color: var(--color-gray-100);
+  border: 2px solid var(--color-gray-400);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+  @apply px-4 py-2 rounded-sm transition-colors font-bold;
+  background-color: var(--color-gray-700);
+  color: var(--color-gray-100);
+  border: 2px solid var(--color-gray-800);
+  transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gray-800);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-secondary {
+  @apply px-4 py-2 rounded-sm transition-colors font-bold;
+  background-color: var(--color-gray-500);
+  color: var(--color-gray-100);
+  border: 2px solid var(--color-gray-600);
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-gray-600);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.app-container {
+  @apply max-w-4xl mx-auto px-3 py-2 md:p-4;
+}
+
+.navbar {
+  @apply flex justify-between items-center mb-4 md:mb-8;
+  padding: 0.5rem 1rem;
+  background-color: var(--color-gray-800);
+  color: var(--color-gray-100);
+  border-bottom: 4px solid var(--color-gray-700);
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+.site-logo {
+  height: 60px;
+  width: 60px;
+  image-rendering: pixelated;
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (min-width: 768px) {
+  .site-logo {
+    height: 100px;
+    width: 100px;
+  }
+}
+
+/* Animation Utility Classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideInUp 0.5s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-rotate {
+  animation: rotate 10s linear infinite;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, 
+    rgba(255,255,255,0) 0%, 
+    rgba(255,255,255,0.2) 50%, 
+    rgba(255,255,255,0) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Staggered animations for lists */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+.stagger-item:nth-child(7) { animation-delay: 0.7s; }
+.stagger-item:nth-child(8) { animation-delay: 0.8s; }
+.stagger-item:nth-child(9) { animation-delay: 0.9s; }
+.stagger-item:nth-child(10) { animation-delay: 1s; }
+
+/* Page transition */
+.page-transition {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+input, button, select, textarea {
+  font-family: 'Courier Prime', monospace;
+}
+
+.border-dashed {
+  border-width: 2px;
+  border-style: dashed;
+} 

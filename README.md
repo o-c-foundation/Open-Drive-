@@ -1,65 +1,110 @@
-<h1 align="center">
-  <a href="https://beta.ui.web3.storage"><img width="250" src="https://bafybeianokbu4dgpfd2mq3za3wejtpscsy25ad6vocmmtxskcq6zig4cuq.ipfs.w3s.link/w3ui-logo-stroke.png" alt="Web3.Storage UI logo" /></a>
-</h1>
+<div align="center">
+  <img src="https://bafkreihge6rx6ykdcdmspwvh4oweojqsvzoyhjgqp6yfqkgo2b45l27auq.ipfs.w3s.link/" alt="OpenDrive Logo" width="150px" />
+  <h1>OpenDrive</h1>
+  <p><em>Secure, Decentralized Storage by The Open Crypto Foundation</em></p>
 
+  <p>
+    <a href="https://github.com/opencryptofoundation/opendrive/blob/main/LICENSE.md">
+      <img src="https://img.shields.io/badge/License-MIT%20%26%20Apache--2.0-blue.svg" alt="License: MIT & Apache-2.0">
+    </a>
+    <a href="https://github.com/opencryptofoundation/opendrive/actions">
+      <img src="https://github.com/opencryptofoundation/opendrive/workflows/CI/badge.svg" alt="CI Status">
+    </a>
+    <a href="https://t.me/opencryptofoundation">
+      <img src="https://img.shields.io/badge/chat-telegram-blue?logo=telegram" alt="Chat on Telegram">
+    </a>
+  </p>
+</div>
 
-<h3 align="center">Headless, type-safe, UI components for the next generation Web3.Storage APIs.</h3>
+## Overview
 
-<p align="center">
-  <a href="https://github.com/web3-storage/w3ui/actions/workflows/test.yaml"><img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/web3-storage/w3ui/test.yaml?branch=main&style=for-the-badge" /></a>
-  <a href="https://discord.com/channels/806902334369824788/864892166470893588"><img src="https://img.shields.io/badge/chat-discord?style=for-the-badge&logo=discord&label=discord&logoColor=ffffff&color=7389D8" /></a>
-  <a href="https://github.com/web3-storage/w3ui/blob/main/LICENSE.md"><img alt="License: Apache-2.0 OR MIT" src="https://img.shields.io/badge/LICENSE-Apache--2.0%20OR%20MIT-yellow?style=for-the-badge" /></a>
-</p>
+OpenDrive is a next-generation decentralized storage platform built on content-addressing principles to provide secure, resilient, and censorship-resistant file storage. Developed by The Open Crypto Foundation, OpenDrive leverages distributed networks to ensure your data remains accessible and tamper-evident.
 
-This repo contains reusauble UI modules for the web3.storage w3up service in React and vanilla JavaScript, and a set of example apps to see them dance.
+### Why OpenDrive?
+
+- **Content-Addressed Storage**: Files are identified by their cryptographic hash, not by location, ensuring content integrity and authenticity
+- **Decentralized Architecture**: No single point of failure or control
+- **Cryptographic Verification**: Every file is cryptographically verified using advanced algorithms
+- **Intuitive Interface**: Modern, responsive design with seamless user experience
+- **Flexible Storage Plans**: From free personal use to enterprise-scale solutions
+
+## Features
+
+- 📤 **Simple File Upload**: Drag-and-drop or browser-based file selection
+- 🔐 **Secure Authentication**: Email-based verification with private key security
+- 📂 **Directory Support**: Upload entire folders while preserving structure
+- 🔄 **Versioning**: Track changes to files over time
+- 🔍 **Easy Retrieval**: Access your files from anywhere with content-based addressing
+- 📊 **Storage Management**: Monitor usage and manage your storage allocation
+- 📱 **Mobile Responsive**: Access from any device with our responsive interface
+
+## Technical Foundation
+
+OpenDrive is built on IPFS (InterPlanetary File System) technology, which provides content-addressed storage through distributed hash tables and directed acyclic graphs. This gives your data several advantages:
+
+- Content is retrieved based on what it is, not where it is
+- Files are automatically deduplicated across the network
+- Built-in versioning through content-addressing
+- Resilience against network partitions and censorship
+
+For developers, OpenDrive offers:
+- TypeScript-based architecture with strict typing
+- React components for seamless integration
+- Comprehensive documentation and examples
+- RESTful API endpoints for programmatic access
+
+## Getting Started
+
+To begin using OpenDrive, simply:
+
+1. Visit [app.opendrive.opencrypto.org](https://app.opendrive.opencrypto.org)
+2. Create an account or sign in
+3. Start uploading your files
+4. Share content using content-addressed links
+
+For developers wanting to contribute to the project:
+
+```bash
+# Clone the repository
+git clone https://github.com/opencryptofoundation/opendrive.git
+cd opendrive
+
+# Install dependencies
+pnpm install
+
+# Start the development server
+cd app
+pnpm dev
+```
 
 ## Documentation
 
-The documentation at [beta.ui.web3.storage](https://beta.ui.web3.storage) is currently out of date - updates coming soon!
+- [User Guide](https://docs.opendrive.opencrypto.org/user-guide)
+- [Developer Documentation](https://docs.opendrive.opencrypto.org/developers)
+- [API Reference](https://docs.opendrive.opencrypto.org/api)
+- [Technical Whitepaper](https://docs.opendrive.opencrypto.org/whitepaper)
 
-### API
+## Storage Plans
 
-[API Reference](https://github.com/web3-storage/w3ui/blob/main/docs/README.md)
+| Plan | Storage | Monthly Price | Features |
+|------|---------|---------------|----------|
+| Basic | 5GB | Free | Content addressing, Basic file sharing |
+| Standard | 100GB | $12.99 | Enhanced redundancy, Priority uploads |
+| Professional | 1TB | $49.99 | Advanced analytics, Multiple accounts |
+| Enterprise | 5TB+ | Custom | Dedicated support, Custom API access |
 
-### Examples
+## About The Open Crypto Foundation
 
-* **Sign up / Sign in** [React](https://github.com/web3-storage/w3ui/tree/main/examples/react/sign-up-in)
-
-    Demonstrates email authentication flow for the service, including private key creation and email validation.
-
-* **Single File Upload** [React](https://github.com/web3-storage/w3ui/tree/main/examples/react/file-upload)
-
-    The simplest file upload using a file input. Includes the auth flow from "Sign up / Sign in".
-
-* **Multiple File Upload** coming soon! [React](https://github.com/web3-storage/w3ui/tree/main/examples/react/multi-file-upload)
-
-    Slightly more complicated file and directory upload. Includes the auth flow from "Sign up / Sign in".
-
-* **Uploads List** coming soon! [React](https://github.com/web3-storage/w3ui/tree/main/examples/react/uploads-list)
-
-    A demo of the list of uploads that have been made to an account.
+The Open Crypto Foundation is dedicated to advancing decentralized technologies that enhance privacy, security, and data ownership. Through open-source development and education, we're creating a more resilient and user-controlled digital ecosystem.
 
 ## Contributing
 
-Feel free to join in. All welcome. Please read our [contributing guidelines](https://github.com/web3-storage/w3ui/blob/main/CONTRIBUTING.md) and/or [open an issue](https://github.com/web3-storage/w3ui/issues)!
+We welcome contributions from the community! Please see our [Contributing Guide](CONTRIBUTING.md) for more information on how to get involved.
 
-### Getting started
+## Security
 
-To contribute to this project, clone the w3ui repository and enter the `w3ui` directory
-
-  ```sh
-  git clone https://github.com/web3-storage/w3ui
-  cd w3ui
-  ```
-
-Install dependencies and build:
-
-  ```sh
-  pnpm install
-  ```
-
-Then pick an example app from the list, `cd` into it's directory and run `pnpm start` to try it out.
+The security of our users' data is paramount. If you discover a security issue, please report it confidentially to [security@opencryptofoundation.org](mailto:security@opencryptofoundation.org).
 
 ## License
 
-Dual-licensed under [MIT + Apache 2.0](https://github.com/web3-storage/w3ui/blob/main/LICENSE.md)
+OpenDrive is dual-licensed under MIT and Apache 2.0 licenses. See [LICENSE.md](LICENSE.md) for more details.

@@ -1,120 +1,152 @@
-# Contributing
+# Contributing to OpenDrive
 
-## Questions
+Thank you for your interest in contributing to OpenDrive by The Open Crypto Foundation! We're excited to have you join our community.
 
-If you have questions about implementation details, help or support, then please use our [Discord Channel](https://discord.com/channels/806902334369824788/864892166470893588).
+This document provides guidelines and instructions for contributing to this project. By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Reporting Issues
+## Table of Contents
 
-If you have found what you think is a bug, please [file an issue](https://github.com/web3-storage/w3ui/issues/new).
+- [Code of Conduct](#code-of-conduct)
+- [Getting Started](#getting-started)
+- [Development Workflow](#development-workflow)
+- [Pull Request Process](#pull-request-process)
+- [Coding Standards](#coding-standards)
+- [Testing](#testing)
+- [Documentation](#documentation)
+- [Community](#community)
 
-## Suggesting new features
+## Code of Conduct
 
-If you are here to suggest a feature, first create an issue if it does not already exist. From there, we will discuss use-cases for the feature and then finally discuss how it could be implemented.
+OpenDrive has adopted a Code of Conduct that we expect project participants to adhere to. Please read [the full text](CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
-## Development
+## Getting Started
 
-If you have been assigned to fix an issue or develop a new feature, please follow these steps to get started:
+### Prerequisites
 
-- Fork this repository.
-- Install dependencies by running `$ npm install`.
-- Build packages `$ npm run build`.
-- Implement your changes and tests to files in the `src/` directory and corresponding test files.
-- To run examples, follow their individual directions.
-- Document your changes in the appropriate doc page.
-- Git stage your required changes and commit (see below commit guidelines).
-- Submit PR for review.
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [pnpm](https://pnpm.io/) (v8 or later)
+- [Git](https://git-scm.com/)
 
-## Commit message conventions
+### Initial Setup
 
-`web3-storage/w3ui` is using [Angular Commit Message Conventions](https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines).
+1. Fork the repository on GitHub
+2. Clone your fork locally:
+   ```bash
+   git clone https://github.com/YOUR-USERNAME/opendrive.git
+   cd opendrive
+   ```
+3. Add the original repository as an upstream remote:
+   ```bash
+   git remote add upstream https://github.com/opencryptofoundation/opendrive.git
+   ```
+4. Install dependencies:
+   ```bash
+   pnpm install
+   ```
 
-We have very precise rules over how our git commit messages can be formatted. This leads to **more readable messages** that are easy to follow when looking through the **project history**.
+## Development Workflow
 
-### Commit Message Format
+1. Create a new branch for your feature or bug fix:
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+   or
+   ```bash
+   git checkout -b fix/issue-you-are-fixing
+   ```
 
-Each commit message consists of a **header**, a **body** and a **footer**. The header has a special
-format that includes a **type**, a **scope** and a **subject**:
+2. Make your changes, following our [coding standards](#coding-standards)
 
-```
-<type>(<scope>): <subject>
-<BLANK LINE>
-<body>
-<BLANK LINE>
-<footer>
-```
+3. Run tests to ensure your changes don't break existing functionality:
+   ```bash
+   pnpm test
+   ```
 
-The **header** is mandatory and the **scope** of the header is optional.
+4. Commit your changes with a clear, descriptive commit message:
+   ```bash
+   git commit -m "Add feature: your feature description"
+   ```
 
-Any line of the commit message cannot be longer than 100 characters! This allows the message to be easier to read on GitHub as well as in various git tools.
+5. Push your branch to your fork:
+   ```bash
+   git push origin feature/your-feature-name
+   ```
 
-### Type
+6. Create a Pull Request from your fork to the main repository
 
-Must be one of the following:
+## Pull Request Process
 
-- **feat**: A new feature
-- **fix**: A bug fix
-- **docs**: Documentation only changes
-- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing
-  semi-colons, etc)
-- **refactor**: A code change that neither fixes a bug nor adds a feature
-- **perf**: A code change that improves performance
-- **test**: Adding missing or correcting existing tests
-- **chore**: Changes to the build process or auxiliary tools and libraries such as documentation
-  generation
+1. Ensure your PR includes only the changes relevant to your feature or bug fix
+2. Update documentation if necessary
+3. Include tests for new functionality
+4. Ensure all tests pass before submitting
+5. Reference any related issues in your PR description using the syntax `Fixes #123` or `Relates to #123`
+6. Wait for a maintainer to review your PR - be responsive to feedback and requested changes
 
-### Scope
+## Coding Standards
 
-The scope could be anything specifying place of the commit change.
+### TypeScript/JavaScript
 
-You can use `*` when the change affects more than a single scope.
+- We use TypeScript for type safety
+- Follow the ESLint rules defined in the project
+- Use async/await over Promise chains
+- Prefer functional programming patterns where appropriate
 
-### Subject
+### React Components
 
-The subject contains succinct description of the change:
+- Use functional components with hooks
+- Separate presentational and container components
+- Use Tailwind CSS for styling
+- Follow component naming convention: `PascalCase.tsx`
 
-- use the imperative, present tense: "change" not "changed" nor "changes"
-- don't capitalize first letter
-- no dot (.) at the end
+### CSS/Styling
 
-### Body
+- Use Tailwind CSS utility classes
+- For custom styles, follow BEM naming convention
+- Keep component-specific styles close to the component
 
-Just as in the **subject**, use the imperative, present tense: "change" not "changed" nor "changes". The body should include the motivation for the change and contrast this with previous behavior.
+## Testing
 
-### Footer
+- Write unit tests for utility functions
+- Write component tests for React components
+- Ensure tests are covering both success and failure cases
 
-The footer should contain any information about **Breaking Changes** and is also the place to [reference GitHub issues that this commit closes](https://help.github.com/en/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue).
+## Documentation
 
-**Breaking Changes** should start with the word `BREAKING CHANGE:` with a space or two newlines. The rest of the commit message is then used for this.
+- Document public APIs and components
+- Update README.md when adding major features
+- Use JSDoc comments for functions and components
+- Keep documentation up-to-date with code changes
 
-### Example
+## Community
 
-Here is an example of the release type that will be done based on a commit messages:
+### Communication Channels
 
-| Commit message                                                                                                                                                                                   | Release type               |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- |
-| `fix(pencil): stop graphite breaking when too much pressure applied`                                                                                                                             | Patch Release              |
-| `feat(pencil): add 'graphiteWidth' option`                                                                                                                                                       | ~~Minor~~ Feature Release  |
-| `perf(pencil): remove graphiteWidth option`<br><br>`BREAKING CHANGE: The graphiteWidth option has been removed.`<br>`The default graphite width of 10mm is always used for performance reasons.` | ~~Major~~ Breaking Release |
+- [GitHub Issues](https://github.com/opencryptofoundation/opendrive/issues) - For bug reports and feature requests
+- [Telegram Group](https://t.me/opencryptofoundation) - For community discussions
+- Email: [dev@opencryptofoundation.org](mailto:dev@opencryptofoundation.org) - For sensitive communications
 
-### Revert
+### Reporting Bugs
 
-If the commit reverts a previous commit, it should begin with `revert:`, followed by the header of the reverted commit. In the body it should say: `This reverts commit <hash>.`, where the hash is the SHA of the commit being reverted.
+- Use the GitHub issue tracker
+- Provide a clear description of the issue
+- Include steps to reproduce
+- Include version information
 
-## Pull requests
+### Feature Requests
 
-Maintainers merge pull requests by squashing all commits and editing the commit message if necessary using the GitHub user interface.
+- Use the GitHub issue tracker
+- Clearly describe the desired functionality
+- Explain the use case
+- (Optional) Suggest an implementation approach
 
-Use an appropriate commit type. Be especially careful with breaking changes.
+## Recognition
 
-## Releases
+Contributors are recognized in the following ways:
+- Listed in CONTRIBUTORS.md file
+- Mentioned in release notes for significant contributions
+- Receive developer swag for major contributions
 
-For each new commit added to `main` with `git push` or by merging a pull request or merging from another branch, a GitHub action is triggered and runs [Release Please](https://github.com/googleapis/release-please) to determine if there are codebase changes since the last release that affect the package functionalities.
+---
 
-### What's a Release PR?
-
-Rather than continuously releasing what's landed to our default branch, release-please maintains Release PRs. These Release PRs are kept up-to-date as additional work is merged. When we're ready to tag a release, we simply merge the release PR.
-
-When the release PR is merged the release job is triggered to create a new tag, a new github release and run other package specific jobs.
-
-Release PRs are created individually for each package in the mono repo.
+Thank you for contributing to OpenDrive by The Open Crypto Foundation! Your efforts help make decentralized storage more accessible to everyone.
