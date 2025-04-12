@@ -8,15 +8,14 @@
     "opencryptofoundation"
   ],
   "license": "Apache-2.0 OR MIT",
-  "packageManager": "pnpm@9.8.0",
   "scripts": {
-    "prepare": "pnpm run build",
-    "build": "cd app && pnpm run build",
-    "dev": "cd app && pnpm run dev",
+    "prepare": "npm run build",
+    "build": "cd app && npm run build",
+    "dev": "cd app && npm run dev",
     "clean": "rm -rf node_modules app/node_modules app/dist",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "lint": "cd app && pnpm run lint",
-    "test": "cd app && pnpm run test"
+    "lint": "cd app && npm run lint",
+    "test": "cd app && npm run test"
   },
   "workspaces": [
     "app"
@@ -29,8 +28,7 @@
     "opendrive"
   ],
   "engines": {
-    "node": ">=16.0.0",
-    "pnpm": ">=7.0.0"
+    "node": ">=16.0.0"
   },
   "repository": {
     "type": "git",
